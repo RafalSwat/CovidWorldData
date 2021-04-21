@@ -1,24 +1,412 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aeq-Yk-V8i">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CovidWorldData" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6x3-AC-mK8" customClass="background">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L0a-rF-lvI" userLabel="TopVStack">
+                                <rect key="frame" x="50.333333333333343" y="60" width="327.33333333333326" height="220"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COVID-19 World Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5r-gH-BMd" userLabel="Title">
+                                        <rect key="frame" x="0.0" y="0.0" width="327.33333333333331" height="51"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="50"/>
+                                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="-1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="673-fb-C4Y">
+                                        <rect key="frame" x="0.0" y="61" width="327.33333333333331" height="32"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="31"/>
+                                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="-1" height="1"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eg. Germany" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UC5-2U-W4w" userLabel="Country TextField">
+                                        <rect key="frame" x="0.0" y="103" width="327.33333333333331" height="35"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVT-Km-woK">
+                                        <rect key="frame" x="0.0" y="148" width="327.33333333333331" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc5-Du-DNB" userLabel="Search Button">
+                                        <rect key="frame" x="0.0" y="158" width="327.33333333333331" height="62"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="-2" height="2"/>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ceA-cT-1pU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6x3-AC-mK8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0BF-aO-Og3"/>
+                            <constraint firstItem="6x3-AC-mK8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2Ba-d1-ajl"/>
+                            <constraint firstAttribute="trailing" secondItem="6x3-AC-mK8" secondAttribute="trailing" id="8Qq-15-7iD"/>
+                            <constraint firstItem="L0a-rF-lvI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Keq-gQ-ohP"/>
+                            <constraint firstItem="L0a-rF-lvI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="60" id="lWz-ot-wTc"/>
+                            <constraint firstAttribute="bottom" secondItem="6x3-AC-mK8" secondAttribute="bottom" id="vnl-fo-wyk"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="HLI-1K-mmd"/>
+                    <connections>
+                        <outlet property="alertLabel" destination="JVT-Km-woK" id="3sl-K2-Xja"/>
+                        <outlet property="searchButton" destination="qc5-Du-DNB" id="Hso-Gm-1Q5"/>
+                        <outlet property="textField" destination="UC5-2U-W4w" id="m63-6l-ZOs"/>
+                        <outlet property="titleLabel" destination="e5r-gH-BMd" id="hHv-yi-EmW"/>
+                        <outlet property="verticalStack" destination="L0a-rF-lvI" id="nLq-Z4-fEG"/>
+                        <segue destination="WTf-Ly-4J9" kind="show" identifier="resultSegue" id="HwO-i8-qPT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="257.94392523364485" y="116.63066954643629"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="zcr-is-EfP">
+            <objects>
+                <viewController id="WTf-Ly-4J9" customClass="ResultsViewController" customModule="CovidWorldData" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9lD-f7-iPG">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSU-o9-h8D">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12r-D8-7ag" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1072"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSR-Ja-d04">
+                                                <rect key="frame" x="20" y="10" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="PaU-Sk-H6t"/>
+                                                    <constraint firstAttribute="height" constant="60" id="dBI-cF-9GH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <color key="tintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="aen-Xe-DV4"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="S7n-Y1-5u9">
+                                                <rect key="frame" x="0.0" y="250" width="428" height="860"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="virusImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-BE-6Tg">
+                                                <rect key="frame" x="89" y="30" width="250" height="220"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="9BT-50-AnO"/>
+                                                    <constraint firstAttribute="height" constant="220" id="Ig6-qi-uwE"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N54-Aq-hrb" userLabel="MiddleVStack">
+                                                <rect key="frame" x="20" y="250" width="388" height="294"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-Xf-0uh" userLabel="Country">
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="62"/>
+                                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="61"/>
+                                                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <size key="shadowOffset" width="1" height="1"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OY2-Oc-Amk" userLabel="Last updated ">
+                                                        <rect key="frame" x="0.0" y="70" width="388" height="50"/>
+                                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="22"/>
+                                                        <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="shadowOffset" width="1" height="1"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFit" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vKk-8c-ezm" userLabel="HStack">
+                                                        <rect key="frame" x="0.0" y="128" width="388" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cov19 Cases:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKP-0g-Bpa">
+                                                                <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z1-r5-B2F" userLabel="Cov19 Cases Count">
+                                                                <rect key="frame" x="111.33333333333334" y="0.0" width="276.66666666666663" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BB9-5F-UBZ" userLabel="HStack">
+                                                        <rect key="frame" x="0.0" y="186" width="388" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deaths" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLC-30-pYy">
+                                                                <rect key="frame" x="0.0" y="0.0" width="54" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaX-Ir-a3A" userLabel="Deaths Count">
+                                                                <rect key="frame" x="62" y="0.0" width="326" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-WF-GWY" userLabel="Hstack">
+                                                        <rect key="frame" x="0.0" y="244" width="388" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovered" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4d-KX-aJT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKX-cU-1Dc" userLabel="Recovered Count">
+                                                                <rect key="frame" x="91.333333333333343" y="0.0" width="296.66666666666663" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ldy-fL-3dw" userLabel="BottomVStack">
+                                                <rect key="frame" x="20" y="604" width="388" height="332"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACTIVE CASES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWM-Bg-65T">
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="41"/>
+                                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="40"/>
+                                                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <size key="shadowOffset" width="1" height="1"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HxQ-XH-6yD" userLabel="HStack">
+                                                        <rect key="frame" x="0.0" y="51" width="388" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently Infected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OE-kh-S87">
+                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD4-vS-f2A" userLabel="Currently Infected Count">
+                                                                <rect key="frame" x="148" y="0.0" width="240" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eg7-8h-1RN" userLabel="HStack">
+                                                        <rect key="frame" x="0.0" y="111" width="388" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Mild Condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkJ-a0-n2i">
+                                                                <rect key="frame" x="0.0" y="0.0" width="130.33333333333334" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aeo-Fv-5W0" userLabel="in Mild Condition Count">
+                                                                <rect key="frame" x="138.33333333333337" y="0.0" width="249.66666666666663" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZJT-0Q-eEm" userLabel="HStack">
+                                                        <rect key="frame" x="0.0" y="171" width="388" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serious or Critical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLL-wR-knq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAw-Ef-fCO" userLabel="Serious or Critical Count">
+                                                                <rect key="frame" x="148" y="0.0" width="240" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
+                                                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAST NEWS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lq-3M-cWL">
+                                                        <rect key="frame" x="0.0" y="231" width="388" height="41"/>
+                                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="40"/>
+                                                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <size key="shadowOffset" width="1" height="1"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XHG-Yr-H5o" userLabel="HStack">
+                                                        <rect key="frame" x="0.0" y="282" width="388" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New cases" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFJ-6k-WYH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="35"/>
+                                                                <color key="highlightedColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="shadowColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gD-KF-dOr" userLabel="New cases Count">
+                                                                <rect key="frame" x="126.33333333333334" y="0.0" width="261.66666666666663" height="50"/>
+                                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="35"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <color key="shadowColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="N54-Aq-hrb" firstAttribute="top" secondItem="dxo-BE-6Tg" secondAttribute="bottom" id="0eE-Rc-jvQ"/>
+                                            <constraint firstItem="qSR-Ja-d04" firstAttribute="leading" secondItem="12r-D8-7ag" secondAttribute="leading" constant="20" id="4Vz-CM-Ik0"/>
+                                            <constraint firstItem="S7n-Y1-5u9" firstAttribute="leading" secondItem="12r-D8-7ag" secondAttribute="leading" id="IrB-Ed-8hB"/>
+                                            <constraint firstAttribute="trailing" secondItem="N54-Aq-hrb" secondAttribute="trailing" constant="20" id="NSK-6i-6k9"/>
+                                            <constraint firstAttribute="trailing" secondItem="ldy-fL-3dw" secondAttribute="trailing" constant="20" id="VbJ-8X-MGA"/>
+                                            <constraint firstItem="S7n-Y1-5u9" firstAttribute="top" secondItem="dxo-BE-6Tg" secondAttribute="bottom" id="Yn5-0U-PwB"/>
+                                            <constraint firstItem="N54-Aq-hrb" firstAttribute="leading" secondItem="12r-D8-7ag" secondAttribute="leading" constant="20" id="Zm7-CW-vUV"/>
+                                            <constraint firstItem="dxo-BE-6Tg" firstAttribute="centerX" secondItem="12r-D8-7ag" secondAttribute="centerX" id="gXi-WI-lxG"/>
+                                            <constraint firstAttribute="trailing" secondItem="S7n-Y1-5u9" secondAttribute="trailing" id="gdo-Lt-LER"/>
+                                            <constraint firstItem="ldy-fL-3dw" firstAttribute="leading" secondItem="12r-D8-7ag" secondAttribute="leading" constant="20" id="gg6-E8-Ub3"/>
+                                            <constraint firstItem="ldy-fL-3dw" firstAttribute="top" secondItem="N54-Aq-hrb" secondAttribute="bottom" constant="60" id="qKk-By-ZdJ"/>
+                                            <constraint firstItem="dxo-BE-6Tg" firstAttribute="top" secondItem="12r-D8-7ag" secondAttribute="top" constant="30" id="uZG-p4-KJH"/>
+                                            <constraint firstAttribute="bottom" secondItem="S7n-Y1-5u9" secondAttribute="bottom" constant="-38" id="wzy-RP-TyH"/>
+                                            <constraint firstItem="qSR-Ja-d04" firstAttribute="top" secondItem="12r-D8-7ag" secondAttribute="top" constant="10" id="zAX-5K-yY5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="12r-D8-7ag" secondAttribute="bottom" id="0Mx-1U-anD"/>
+                                    <constraint firstItem="12r-D8-7ag" firstAttribute="leading" secondItem="jSU-o9-h8D" secondAttribute="leading" id="g9B-ca-iuD"/>
+                                    <constraint firstItem="12r-D8-7ag" firstAttribute="top" secondItem="jSU-o9-h8D" secondAttribute="top" id="jGD-Ku-bpy"/>
+                                    <constraint firstAttribute="trailing" secondItem="12r-D8-7ag" secondAttribute="trailing" id="jhf-ep-Shf"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="X02-c7-Xyf"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="2pi-dx-83y"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dCp-e0-2TY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jSU-o9-h8D" firstAttribute="leading" secondItem="9lD-f7-iPG" secondAttribute="leading" id="9hK-iJ-sV8"/>
+                            <constraint firstAttribute="trailing" secondItem="jSU-o9-h8D" secondAttribute="trailing" id="Rj4-km-pQw"/>
+                            <constraint firstItem="jSU-o9-h8D" firstAttribute="top" secondItem="9lD-f7-iPG" secondAttribute="top" id="UEe-ly-jNb"/>
+                            <constraint firstAttribute="bottom" secondItem="jSU-o9-h8D" secondAttribute="bottom" id="jga-2a-joe"/>
+                            <constraint firstItem="12r-D8-7ag" firstAttribute="height" secondItem="9lD-f7-iPG" secondAttribute="height" constant="200" id="noz-Bh-OVe"/>
+                            <constraint firstItem="12r-D8-7ag" firstAttribute="width" secondItem="9lD-f7-iPG" secondAttribute="width" id="sYN-Hf-jsR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qdJ-2F-2aP"/>
+                    <connections>
+                        <outlet property="allCasesLabel" destination="2Z1-r5-B2F" id="ale-5C-kDC"/>
+                        <outlet property="baseInfoVStack" destination="N54-Aq-hrb" id="kUH-2O-4dO"/>
+                        <outlet property="countryLabel" destination="eRm-Xf-0uh" id="Mbk-jU-Kt0"/>
+                        <outlet property="currentDataVStack" destination="ldy-fL-3dw" id="SxT-7E-jX6"/>
+                        <outlet property="currentlyInfectedLabel" destination="SD4-vS-f2A" id="PvQ-N4-3mB"/>
+                        <outlet property="deathsLabel" destination="VaX-Ir-a3A" id="2pY-RC-OY6"/>
+                        <outlet property="lastUpdateLabel" destination="OY2-Oc-Amk" id="YQf-UF-K2h"/>
+                        <outlet property="midConditionLabel" destination="Aeo-Fv-5W0" id="iXP-Fb-keo"/>
+                        <outlet property="newCasesLabel" destination="6gD-KF-dOr" id="Rv7-QJ-ZUQ"/>
+                        <outlet property="recoveredLabel" destination="CKX-cU-1Dc" id="UtL-NH-Ers"/>
+                        <outlet property="seriousOrCriticalHStack" destination="ZJT-0Q-eEm" id="DN9-OQ-QPf"/>
+                        <outlet property="seriousOrCriticalLabel" destination="sAw-Ef-fCO" id="dw3-GS-yde"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRi-ab-H2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967.28971962616822" y="116.63066954643629"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E0v-DJ-wd0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="aeq-Yk-V8i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GNz-pa-RTb">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0qH-mr-Akm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZjA-m8-kYQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTq-cl-aPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-639.25233644859804" y="116.63066954643629"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HwO-i8-qPT"/>
+        <segue reference="aen-Xe-DV4"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
+        <image name="background.jpg" width="844" height="1500"/>
+        <image name="background2.jpg" width="720" height="540"/>
+        <image name="virusImage.jpg" width="1000" height="563"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
