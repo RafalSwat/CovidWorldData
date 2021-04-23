@@ -15,7 +15,10 @@ class NetworkHandler {
     let urlString = "https://www.worldometers.info/coronavirus/country/"
 
     func fetchCovData(from country: String, completion: @escaping (ResultsModel?, Bool, String?)->()) {
-        let pathUrl = urlString + country + "/"
+        
+        var convertCountry = country.replacingOccurrences(of: " ", with: "-")
+        convertCountry = stringHandler.replaceIfNeeded(country: convertCountry)
+        let pathUrl = urlString + convertCountry + "/"
         
         if verifyUrl(urlString: pathUrl) {
             if let url = URL(string: pathUrl) {
@@ -44,7 +47,8 @@ class NetworkHandler {
                 completion(nil, true, "Can not construct URL from: \(pathUrl)")
             }
         } else {
-            completion(nil, true, "Can not open URl -> Link is incorrect")
+            completion(nil, true, "Can not open find data for this country!")
+            print("Can not open URl -> Link is incorrect")
         }
     }
     
@@ -80,20 +84,23 @@ class NetworkHandler {
         let criticalSeriuos  = stringHandler.extractFirstFromText(from: dataString,
                                                                   startedBy: Separators.criticalStart,
                                                                   endedBy: Separators.criticalEnd)
-        let newCases         = stringHandler.extractFirstFromText(from: dataString,
+        var newCases         = stringHandler.extractFirstFromText(from: dataString,
                                                                   startedBy: Separators.newStart,
                                                                   endedBy: Separators.newEnd)
         
+        if newCases.components(separatedBy: " ").count > 1 { newCases = "unknown" }
+        
         if titleResult != "404 Not Found" {
             let titleArray  = titleResult.components(separatedBy: " ")
+            
             let casesIndex  = titleArray.firstIndex(of: "Cases")
             let deathsIndex = titleArray.firstIndex(of: "Deaths")
             
-            let country     = titleArray[0]
+            let country     = titleResult.components(separatedBy: Separators.countryEnd)[0]
             let cases       = titleArray[(casesIndex ?? 4)-1]
             let deaths      = titleArray[(deathsIndex ?? 7)-1]
             
-            let result = ResultsModel(country          : country,
+            let result = ResultsModel(country      : country,
                                   lastUpdated      : lastUpdate,
                                   cases            : cases,
                                   death            : deaths,
@@ -105,13 +112,14 @@ class NetworkHandler {
             
             completion(result, false, nil)
         } else {
-            completion(nil , true, "cannot find data related to this country. Check that you have entered the name of the country correctly")
+            completion(nil , true, "Can not find data related to this country. Please check if you have entered the correct name of the country.")
         }
     }
 }
 
 extension NetworkHandler {
     enum Separators {
+        static let countryEnd        = "COVID:"
         static let updateStart       = "<div style=\"font-size:13px; color:#999; text-align:center\">"
         static let updateEnd         = "</div>"
         

@@ -20,6 +20,7 @@
 		07DD67F3262DBDBF008FFAC9 /* StringHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD67F2262DBDBF008FFAC9 /* StringHandler.swift */; };
 		07DD67F6262DDC40008FFAC9 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD67F5262DDC40008FFAC9 /* NetworkHandler.swift */; };
 		07DD67F9262DE53F008FFAC9 /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD67F8262DE53F008FFAC9 /* ResultsModel.swift */; };
+		07DD680B26319C22008FFAC9 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD680A26319C22008FFAC9 /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +32,14 @@
 		078E8A68262471B40075FF0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		078E8A6B262471B40075FF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		078E8A6D262471B40075FF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		078E8A782625FA2D0075FF0E /* virusImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = virusImage.jpg; sourceTree = SOURCE_ROOT; };
-		078E8A792625FA2D0075FF0E /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = SOURCE_ROOT; };
-		078E8A7D2626AC600075FF0E /* background2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background2.jpg; sourceTree = SOURCE_ROOT; };
+		078E8A782625FA2D0075FF0E /* virusImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = virusImage.jpg; path = CovidWorldData/Images/virusImage.jpg; sourceTree = SOURCE_ROOT; };
+		078E8A792625FA2D0075FF0E /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = CovidWorldData/Images/background.jpg; sourceTree = SOURCE_ROOT; };
+		078E8A7D2626AC600075FF0E /* background2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background2.jpg; path = CovidWorldData/Images/background2.jpg; sourceTree = SOURCE_ROOT; };
 		078E8A802626E97A0075FF0E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		07DD67F2262DBDBF008FFAC9 /* StringHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHandler.swift; sourceTree = "<group>"; };
 		07DD67F5262DDC40008FFAC9 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		07DD67F8262DE53F008FFAC9 /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
+		07DD680A26319C22008FFAC9 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,20 +74,53 @@
 			children = (
 				078E8A5F262471B30075FF0E /* AppDelegate.swift */,
 				078E8A61262471B30075FF0E /* SceneDelegate.swift */,
-				078E8A63262471B30075FF0E /* ViewController.swift */,
-				07DD67F2262DBDBF008FFAC9 /* StringHandler.swift */,
-				07DD67F5262DDC40008FFAC9 /* NetworkHandler.swift */,
-				078E8A802626E97A0075FF0E /* ResultsViewController.swift */,
-				07DD67F8262DE53F008FFAC9 /* ResultsModel.swift */,
+				07DD68102631ACB3008FFAC9 /* Model */,
+				07DD680F2631AC9C008FFAC9 /* Controllers */,
+				07DD680E2631AC76008FFAC9 /* Helpers */,
 				078E8A65262471B30075FF0E /* Main.storyboard */,
-				078E8A7D2626AC600075FF0E /* background2.jpg */,
-				078E8A792625FA2D0075FF0E /* background.jpg */,
-				078E8A782625FA2D0075FF0E /* virusImage.jpg */,
 				078E8A68262471B40075FF0E /* Assets.xcassets */,
+				07DD68112631ACD1008FFAC9 /* Images */,
 				078E8A6A262471B40075FF0E /* LaunchScreen.storyboard */,
 				078E8A6D262471B40075FF0E /* Info.plist */,
 			);
 			path = CovidWorldData;
+			sourceTree = "<group>";
+		};
+		07DD680E2631AC76008FFAC9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				07DD67F5262DDC40008FFAC9 /* NetworkHandler.swift */,
+				07DD67F2262DBDBF008FFAC9 /* StringHandler.swift */,
+				07DD680A26319C22008FFAC9 /* PaddingLabel.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		07DD680F2631AC9C008FFAC9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				078E8A63262471B30075FF0E /* ViewController.swift */,
+				078E8A802626E97A0075FF0E /* ResultsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		07DD68102631ACB3008FFAC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07DD67F8262DE53F008FFAC9 /* ResultsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07DD68112631ACD1008FFAC9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				078E8A7D2626AC600075FF0E /* background2.jpg */,
+				078E8A792625FA2D0075FF0E /* background.jpg */,
+				078E8A782625FA2D0075FF0E /* virusImage.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +200,7 @@
 				078E8A64262471B30075FF0E /* ViewController.swift in Sources */,
 				078E8A60262471B30075FF0E /* AppDelegate.swift in Sources */,
 				078E8A62262471B30075FF0E /* SceneDelegate.swift in Sources */,
+				07DD680B26319C22008FFAC9 /* PaddingLabel.swift in Sources */,
 				078E8A812626E97A0075FF0E /* ResultsViewController.swift in Sources */,
 				07DD67F9262DE53F008FFAC9 /* ResultsModel.swift in Sources */,
 				07DD67F6262DDC40008FFAC9 /* NetworkHandler.swift in Sources */,

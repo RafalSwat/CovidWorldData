@@ -21,10 +21,27 @@ class StringHandler {
                 
                 let resultString         = secondPartOfSplitedString[0]
                 let noSpacesResultString = resultString.trimmingCharacters(in: .whitespaces)
+                
                 return noSpacesResultString
+                
             }
-            return "Can not find \"endedBy\" String in the data"
+            print("Can not find \"endedBy\" String in the data")
+            return "unknown"
         }
-        return "Can not find \"startedBy\" String in the data"
+        print("Can not find \"startedBy\" String in the data")
+        return "unknown"
+    }
+    
+    func replaceIfNeeded(country: String) -> String {
+        switch country {
+        case "USA":
+            return "us"
+        case "United States":
+            return "us"
+        case "United Kingdom":
+            return "uk"
+        default:
+            return country
+        }
     }
 }

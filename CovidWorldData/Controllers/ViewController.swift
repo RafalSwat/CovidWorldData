@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     let networkHandler    = NetworkHandler()
     let customPurpleColor = UIColor(red: 0.5808190107, green: 0.0884276256, blue: 0.3186392188, alpha: 1.0).cgColor
@@ -19,39 +19,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel    : UILabel!
     @IBOutlet weak var textField     : UITextField!
     @IBOutlet weak var searchButton  : UIButton!
-    @IBOutlet weak var alertLabel    : UILabel!
-    
-    
-    
+    @IBOutlet weak var alertLabel    : PaddingLabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         
         setButtonAppearance()
         setVStackAppearance()
+        setupTapGestureRecognizer()
+        self.textField.delegate = self
     }
+    
     @IBAction func searchButtonTapped(_ sender: Any) {
 
             self.loadData(completion: { finishDownloadingData in
                 if finishDownloadingData {
                     self.performSegue(withIdentifier: "resultSegue" , sender: self)
                 } else {
-                    self.setupAlertLabelAppearance()
+                    DispatchQueue.main.async {
+                        self.setupAlertLabelAppearance()
+                    }
                 }
             })
-        
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultSegue" {
-            let resultViewController = segue.destination as! ResultsViewController
+            let resultViewController     = segue.destination as! ResultsViewController
             resultViewController.results = self.result
         }
     }
     
-    
     func setVStackAppearance() {
-        verticalStack.setCustomSpacing(70, after: titleLabel)
+        verticalStack.setCustomSpacing(50, after: titleLabel)
         verticalStack.setCustomSpacing(20, after: textField)
     }
 
@@ -68,9 +68,17 @@ class ViewController: UIViewController {
     }
     
     func setupAlertLabelAppearance() {
-        alertLabel.backgroundColor = UIColor.red.withAlphaComponent(0.4)
-        alertLabel.layer.cornerRadius = 20
-        alertLabel.text = alertText
+        alertLabel.padding(0, 0, 5, 5)
+        alertLabel.backgroundColor     = UIColor.red.withAlphaComponent(0.8)
+        alertLabel.layer.masksToBounds = true
+        alertLabel.layer.cornerRadius  = 5
+        alertLabel.text                = alertText
+    }
+    func setupTapGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
 
     func loadData(completion: @escaping (Bool)->()) {
@@ -95,6 +103,12 @@ class ViewController: UIViewController {
             completion(false)
         }
     }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }
-
 
