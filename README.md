@@ -11,13 +11,13 @@ A simple app to monitor the number of covid infections for a selected country.
 
 ### Additional information
 
-> downloading web content
-> using PaddingTextField: <https://gist.github.com/konnnn/d43af3bd525bb4c58f5c29fb14575b0d>
+- downloading web content
+- using PaddingTextField: <https://gist.github.com/konnnn/d43af3bd525bb4c58f5c29fb14575b0d>
 
 ### Photos
 
-> background - Photo by Brian McGowan on Unsplash 
-> virusImage - Photo by CDC on Unsplash
+- background - Photo by Brian McGowan on Unsplash 
+- virusImage - Photo by CDC on Unsplash
 
 ## License
 
