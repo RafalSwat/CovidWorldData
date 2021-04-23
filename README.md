@@ -6,7 +6,7 @@ A simple app to monitor the number of covid infections for a selected country.
 
 ## Gifs
 
-![gif 1](https://media.giphy.com/media/XsGfzM3GJ2jSTfU59B/giphy.gif) ![gif 2](https://media.giphy.com/media/QT8eugA5aJ8TezBDBp/giphy.gif) 
+![gif 1](https://media.giphy.com/media/XsGfzM3GJ2jSTfU59B/giphy.gif) ![gif 2](https://media.giphy.com/media/uv5ov3BIdIHU9UVosO/giphy.gif) 
 
 
 ### Additional information
